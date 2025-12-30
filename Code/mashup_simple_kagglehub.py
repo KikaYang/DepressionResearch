@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 import kagglehub
 
-# ---------- 小工具：尽量写得直白 ----------
+# ---------- Tools that we used ----------
 
 def yesno_to01(s: pd.Series) -> pd.Series:
     if pd.api.types.is_numeric_dtype(s):
@@ -73,15 +73,15 @@ def pick_csv(folder: Path, keyword: str | None = None) -> Path:
         for p in csvs:
             if keyword.lower() in p.name.lower():
                 return p
-    # 兜底：选最大的 csv（通常是主数据）
+    # pick the largest csv file
     return max(csvs, key=lambda p: p.stat().st_size)
 
-# ---------- 读取三份数据：用“真实列名”，不搞花 ----------
+# ---------- read three datasets：using the real column name ----------
 
 def load_student(csv_path: Path) -> pd.DataFrame:
     df = pd.read_csv(csv_path)
 
-    # 如果列名对不上，会直接 KeyError；这样最直观（你就去改这里的列名）
+    # if the column name doesn't match it will be KeyError
     df = df[[
         "Age",
         "Dietary Habits",
@@ -128,7 +128,6 @@ def load_professional(csv_path: Path) -> pd.DataFrame:
 def load_general_proxy(csv_path: Path) -> pd.DataFrame:
     df = pd.read_csv(csv_path)
 
-    # 注意：这份原始表有 Name（PII），这里不读它
     df = df[[
         "Age",
         "Dietary Habits",
@@ -142,13 +141,13 @@ def load_general_proxy(csv_path: Path) -> pd.DataFrame:
     df["financial_bucket"] = fin_bucket_from_income(df["Income"])
     df["family_history_flag"] = yesno_to01(df["Family History of Depression"])
 
-    # proxy outcome（不是抑郁诊断）
+    # proxy outcome（not same as depression）
     df["proxy_flag"] = yesno_to01(df["History of Mental Illness"])
 
     df["source_dataset"] = "general_proxy"
     return df
 
-# ---------- 主流程：下载 -> 找 csv -> 清洗 -> 聚合 -> mash-up ----------
+# ---------- main work flow：download -> find csv -> clean -> agg -> mash-up ----------
 
 def main():
     prof_dir = Path(kagglehub.dataset_download("ikynahidwin/depression-professional-dataset"))
@@ -168,7 +167,6 @@ def main():
     prof = load_professional(prof_csv)
     general = load_general_proxy(general_csv)
 
-    # ✅ 推荐：先用少量维度（避免组合爆炸）
     group_cols = ["age_group", "diet_group", "financial_bucket", "family_history_flag"]
 
     s_sum = summarize_rate(student, "depression_flag", group_cols)
