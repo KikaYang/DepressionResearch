@@ -156,7 +156,7 @@ def main():
 
     prof_csv = pick_csv(prof_dir, keyword="professional")
     student_csv = pick_csv(student_dir, keyword="student")
-    general_csv = pick_csv(general_dir, keyword="depression")  # 兜底：选最大的
+    general_csv = pick_csv(general_dir, keyword="depression")
 
     print("Using CSV files:")
     print(" - professional:", prof_csv)
