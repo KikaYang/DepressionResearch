@@ -46,10 +46,10 @@ Within each dataset, we compute group statistics using shared grouping keys (e.g
 This produces `mashup_summary.csv`, and a publication-ready version `mashup_summary_public.csv` after filtering small/invalid groups.
 
 7. Trend consistency check
-Because the general dataset uses a proxy outcome, we do not compare absolute prevalence across sources. Instead, we compare **directional trends** along the hardship axis (Low→Medium→High) and stratify by `family_history_flag` (0/1). We output `trend_summary.csv` and trend plots to assess cross-source robustness.
+Because the general dataset uses a proxy outcome, we do not compare absolute prevalence across sources. Instead, we compare **directional trends** along the hardship axis (Low→Medium→High) and stratify by `family_history_flag` (0/1). We output trend plots to assess cross-source robustness.
 
 8. Reproducible outputs & publication
 We publish processed aggregates and visualisations:
 - `mashup_summary_public.csv` (publishable aggregate)
-- `trend_summary.csv` (direction/strength summary)
+- trend plots (direction/strength summary)
 - hardship trend plots (stratified by family history)
