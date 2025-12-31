@@ -22,7 +22,7 @@ Field names and representations vary across datasets. We harmonise them into a s
   - general: no depression label; we use `proxy_flag` (History of Mental Illness → 1/0) as a proxy risk signal
 
 4. Cleaning & preprocessing
-We perform preprocessing to improve computability and reduce noise:
+We perform preprocessing to improve computability and reduce noise:  
 **Boolean normalisation**: Yes/No and similar values mapped to 1/0.  
 **Category normalisation**: unify spelling/casing.  
 **Binning**: convert continuous values into interpretable buckets:
