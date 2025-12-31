@@ -26,9 +26,9 @@ We perform preprocessing to improve computability and reduce noise:
 **Boolean normalisation**: Yes/No and similar values mapped to 1/0.  
 **Category normalisation**: unify spelling/casing.  
 **Binning**: convert continuous values into interpretable buckets:
-- `age` → `age_group`
-- financial stress (1–5) → Low/Medium/High (student/professional)
-- income → terciles Low/Medium/High (general)
+ - `age` → `age_group`
+ - financial stress (1–5) → Low/Medium/High (student/professional)
+ - income → terciles Low/Medium/High (general)
 **Missingness & small groups**: drop records with missing key dimensions and apply a minimum group size threshold (e.g., `MIN_N=30`) to reduce unstable estimates and potential misinterpretation.
 
 5. Aligning “financial” into a unified hardship axis
