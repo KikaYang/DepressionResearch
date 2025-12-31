@@ -14,7 +14,7 @@ The three datasets are not collected from the same individuals and do not share 
 
 3. Schema mapping & harmonisation
 Field names and representations vary across datasets. We harmonise them into a shared schema, including:
-- `Age` → `age_group` (binned categories
+- `Age` → `age_group` (binned categories)
 - `Dietary Habits` → `diet_group` (Healthy/Moderate/Unhealthy)
 - Family mental health history → `family_history_flag` (Yes/No → 1/0)
 - Outcome variables:
