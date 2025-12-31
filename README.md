@@ -51,5 +51,4 @@ Because the general dataset uses a proxy outcome, we do not compare absolute pre
 8. Reproducible outputs & publication
 We publish processed aggregates and visualisations:
 - `mashup_summary_public.csv` (publishable aggregate)
-- trend plots (direction/strength summary)
 - hardship trend plots (stratified by family history)
