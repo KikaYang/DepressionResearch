@@ -23,8 +23,8 @@ Field names and representations vary across datasets. We harmonise them into a s
 
 4. Cleaning & preprocessing
 We perform preprocessing to improve computability and reduce noise:
-**Boolean normalisation**: Yes/No and similar values mapped to 1/0.
-**Category normalisation**: unify spelling/casing.
+**Boolean normalisation**: Yes/No and similar values mapped to 1/0.  
+**Category normalisation**: unify spelling/casing.  
 **Binning**: convert continuous values into interpretable buckets:
 - `age` → `age_group`
 - financial stress (1–5) → Low/Medium/High (student/professional)
