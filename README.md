@@ -92,7 +92,7 @@ That said, we remain mindful that some combinations of demographics could pose a
 
 By proactively addressing these issues – from data collection through to interpretation and publication – we aim to produce insights that are not only interesting and reproducible but also ethical and respectful towards the individuals and communities the data represent.
 
-## Sustainability (dataset updates over time)
+## Sustainability
 
 Our source datasets come from Kaggle, so updates are **outside our control** and the data may change or be removed over time. To keep the project maintainable, we designed a **reproducible pipeline**: whenever the Kaggle sources are updated (or before a future re-release), we can re-download the datasets using the same slugs and re-run our scripts to regenerate the processed outputs (`mashup_summary_public.csv`, `trend_summary.csv`), visualisations, and the RDF artefacts (`mashup_summary_public.ttl`, `dcat-ap.ttl`, `license.ttl`). Each run can be documented with a date/tag so results remain traceable even if upstream data changes later. If a source dataset changes schema or license, we will update the mapping/metadata accordingly and, if needed, restrict publication to aggregated outputs only.
 
