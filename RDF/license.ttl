@@ -1,0 +1,4 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://github.com/KikaYang/DepressionResearch/id/dataset/mashup_summary_public> dct:license <https://creativecommons.org/licenses/by/4.0/> .
+
