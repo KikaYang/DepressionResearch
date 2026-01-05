@@ -1,0 +1,42 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://github.com/KikaYang/DepressionResearch/id/dataset/mashup_summary_public> a dcat:Dataset ;
+    dct:description "Aggregated group-level mash-up across multiple Kaggle datasets. Observations report prevalence rates by harmonised dimensions (age group, dietary habits, financial hardship bucket, family history), with student/professional depression rates and a general proxy rate."@en ;
+    dct:issued "2026-01-05"^^xsd:date ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:modified "2026-01-05"^^xsd:date ;
+    dct:publisher <https://github.com/KikaYang/DepressionResearch/id/agent/publisher> ;
+    dct:source <https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset>,
+        <https://www.kaggle.com/datasets/anthonytherrien/depression-dataset>,
+        <https://www.kaggle.com/datasets/ikynahidwin/depression-professional-dataset> ;
+    dct:title "DepressionResearch mash-up (aggregated trends)"@en ;
+    dcat:contactPoint <https://github.com/KikaYang/DepressionResearch/id/agent/contactPoint> ;
+    dcat:distribution <https://github.com/KikaYang/DepressionResearch/id/distribution/mashup_summary_public_csv>,
+        <https://github.com/KikaYang/DepressionResearch/id/distribution/mashup_summary_public_ttl> ;
+    prov:wasDerivedFrom <https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset>,
+        <https://www.kaggle.com/datasets/anthonytherrien/depression-dataset>,
+        <https://www.kaggle.com/datasets/ikynahidwin/depression-professional-dataset> .
+
+<https://github.com/KikaYang/DepressionResearch/id/agent/contactPoint> a vcard:Kind ;
+    vcard:hasEmail <mailto:yangtianchi2017@gmail.com> .
+
+<https://github.com/KikaYang/DepressionResearch/id/agent/publisher> a foaf:Organization ;
+    foaf:name "DepressionResearch project team" .
+
+<https://github.com/KikaYang/DepressionResearch/id/distribution/mashup_summary_public_csv> a dcat:Distribution ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "CSV distribution"@en ;
+    dcat:downloadURL <https://raw.githubusercontent.com/KikaYang/DepressionResearch/main/mashup_summary_public.csv> ;
+    dcat:mediaType "text/csv" .
+
+<https://github.com/KikaYang/DepressionResearch/id/distribution/mashup_summary_public_ttl> a dcat:Distribution ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:title "RDF Turtle distribution"@en ;
+    dcat:downloadURL <https://raw.githubusercontent.com/KikaYang/DepressionResearch/main/rdf/mashup_summary_public.ttl> ;
+    dcat:mediaType "text/turtle" .
+
