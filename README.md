@@ -6,7 +6,13 @@ The aim of this project is to investigate whether financial hardship is consiste
 
 ## Quality analysis of the datasets
 
-All three source datasets are obtained from Kaggle, which means their quality depends on how the original authors collected and curated the data. We therefore treat them as **secondary, observational datasets** and focus on transparency and robustness rather than “ground-truth” prevalence. We assess quality along: (1) **provenance** (the datasets come from different contributors and sampling frames, so cross-dataset comparisons are limited), (2) **schema/consistency** (we normalise Yes/No fields to 0/1 and harmonise key variables such as age groups and diet categories), (3) **missingness and coverage** (some combinations of variables are absent, e.g., missing Medium bucket in the professional dataset after filtering), (4) **measurement validity** (financial stress vs income measure different constructs; the general dataset lacks a depression label so we use “history of mental illness” as a proxy and compare trend directions only), and (5) **stability of estimates** (we publish only aggregated outputs and apply a minimum group-size threshold, reducing noise from small groups). These limitations are documented in the metadata and guide how we interpret results (directional trends rather than causal claims).
+All three source datasets are obtained from Kaggle, which means their quality depends on how the original authors collected and curated the data. We therefore treat them as **secondary, observational datasets** and focus on transparency and robustness rather than “ground-truth” prevalence. We assess quality along:   
+
+(1) **provenance** (the datasets come from different contributors and sampling frames, so cross-dataset comparisons are limited)  
+(2) **schema/consistency** (we normalise Yes/No fields to 0/1 and harmonise key variables such as age groups and diet categories)  
+(3) **missingness and coverage** (some combinations of variables are absent, e.g., missing Medium bucket in the professional dataset after filtering)  
+(4) **measurement validity** (financial stress vs income measure different constructs; the general dataset lacks a depression label so we use “history of mental illness” as a proxy and compare trend directions only)  
+(5) **stability of estimates** (we publish only aggregated outputs and apply a minimum group-size threshold, reducing noise from small groups). These limitations are documented in the metadata and guide how we interpret results (directional trends rather than causal claims).
 
 
 ## Technical analysis
